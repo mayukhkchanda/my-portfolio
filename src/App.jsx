@@ -1,14 +1,23 @@
 import React from "react";
-import "./App.css";
-import Canvas from "./components/Canvas";
+import Canvas from "components/Globe/Canvas";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "components/About";
+import Experience from "components/Experience";
+import "./App.scss";
+import Error from "components/Error";
 
 const App = () => {
   return (
     <div className="App">
       <div className="content">
-        <div className="brief">
-          <h2>Content Here</h2>
-        </div>
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<About />} />
+            <Route exact path="/experience" element={<Experience />} />
+            <Route exact path="/experience" element={<Experience />} />
+            <Route exact path="*" element={<Error />} />
+          </Routes>
+        </Router>
       </div>
       <div className="globe">
         <Canvas />

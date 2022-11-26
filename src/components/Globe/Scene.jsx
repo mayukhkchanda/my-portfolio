@@ -4,10 +4,10 @@ import gsap from "gsap";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
-import globeVertex from "../glsl/globeVertex.glsl";
-import globeFragment from "../glsl/globeFragment.glsl";
-import atmosphereVertex from "../glsl/atmosphereVertex.glsl";
-import atmosphereFragment from "../glsl/atmosphereFragment.glsl";
+import globeVertex from "glsl/globeVertex.glsl";
+import globeFragment from "glsl/globeFragment.glsl";
+import atmosphereVertex from "glsl/atmosphereVertex.glsl";
+import atmosphereFragment from "glsl/atmosphereFragment.glsl";
 
 const starVertices = (function () {
   const vertices = [];
