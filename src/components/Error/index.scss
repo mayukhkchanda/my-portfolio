@@ -13,7 +13,7 @@
     .rocket {
       //   transition: transform 300ms ease;
       position: absolute;
-      animation: bounce 4s ease infinite;
+      animation: bounce 4s ease, sideways-bounce 4s ease infinite;
     }
   }
   .link {
@@ -37,6 +37,24 @@
   }
   80% {
     transform: translate(-5px, 5px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes sideways-bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(2px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -2px);
+  }
+  80% {
+    transform: translate(2px, 3px);
   }
   100% {
     transform: translate(0px, 0px);

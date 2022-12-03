@@ -25,6 +25,7 @@ const positions = new Float32Array(starVertices);
 const Scene = () => {
   const globeRef = useRef(null);
   const groupRef = useRef(null);
+  const cameraRef = useRef(null);
   const earthMap = useLoader(
     TextureLoader,
     process.env.PUBLIC_URL + "assets/textures/earth.jpg"
@@ -64,12 +65,25 @@ const Scene = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!cameraRef.current) return;
+
+    gsap.to(cameraRef.current.position, {
+      x: 0,
+      y: 0,
+      z: 20,
+      duration: 1,
+      delay: 0.25,
+    });
+  }, [cameraRef.current]);
+
   return (
     <>
       <PerspectiveCamera
         args={[45, window.innerWidth / window.innerHeight, 1, 1000]}
         makeDefault
-        position={[0, 0, 20]}
+        position={[0, 0, 2000]}
+        ref={cameraRef}
       />
       <OrbitControls />
       <ambientLight intensity={1} color={0xffffff} />
