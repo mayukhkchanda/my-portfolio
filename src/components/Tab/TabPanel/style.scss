@@ -61,3 +61,16 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .tab-panel {
+    .header {
+      .title {
+        font-size: 16px;
+      }
+      .duration {
+        font-size: 14px;
+      }
+    }
+  }
+}

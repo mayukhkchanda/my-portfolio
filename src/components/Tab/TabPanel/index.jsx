@@ -4,14 +4,14 @@ import "./style.scss";
 
 const TabPanel = (props) => {
   const { data, index, value } = props;
-  if (index != value) return;
+  if (index !== value) return;
   return (
     <div className="tab-panel">
       <div className="header">
         <p className="title">
           {`${data.designation} `}
           <a className="header-link" target="_blank" href={data.website}>
-            @ {data.company}
+            @{data.company}
           </a>
         </p>
         <p className="duration">{data.duration}</p>

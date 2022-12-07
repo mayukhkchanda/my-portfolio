@@ -3,10 +3,10 @@
 
   padding: 16px 8px;
   color: #fff;
-  background: rgba(254, 221, 75, 0.15);
+  background: rgba(254, 221, 75, 0.07);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.1px);
+  backdrop-filter: blur(6.1px);
   -webkit-backdrop-filter: blur(7.1px);
   border: 1px solid rgba(254, 221, 75, 0.27);
   min-height: 400px;
@@ -24,5 +24,22 @@
     height: 6px;
     background-color: #ffd207;
     bottom: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .MuiPaper-root.experience {
+    min-height: 500px;
+    min-width: fit-content;
+    padding: 16px 4px;
+    background: rgba(254, 221, 75, 0.04);
+    backdrop-filter: blur(1px);
+
+    .main-title {
+      font-size: 18px;
+    }
+    .main-title::after {
+      width: 70%;
+    }
   }
 }

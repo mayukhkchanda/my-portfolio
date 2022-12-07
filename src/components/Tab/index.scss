@@ -14,4 +14,9 @@
       background-color: #ffd207;
     }
   }
+
+  &.mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
