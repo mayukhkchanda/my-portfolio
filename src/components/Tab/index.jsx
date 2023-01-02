@@ -30,8 +30,8 @@ const Index = (props) => {
         orientation={mobileView ? "horizontal" : "vertical"}
         variant="scrollable"
       >
-        <Tab className="tab" label="Amdocs" />
-        <Tab className="tab" label="Cognizant" />
+        <Tab className="tab" label="Amdocs" id="tab-0" />
+        <Tab className="tab" label="Cognizant" id="tab-1" />
       </Tabs>
       {tabPanelData.map((data, index) => (
         <TabPanel index={index} value={value} key={data?.company} data={data} />

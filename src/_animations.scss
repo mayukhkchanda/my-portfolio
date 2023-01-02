@@ -1,0 +1,6 @@
+@mixin fade-in-animation {
+  animation-name: visible;
+  animation-duration: 1s;
+  animation-delay: 1.3s;
+  animation-fill-mode: forwards;
+}
