@@ -1,11 +1,10 @@
 import React from "react";
-import "./index.scss";
-// import { Link } from "react-router-dom";
 import Link from "components/Link";
+import "./index.scss";
 
-const About = () => {
+const Home = () => {
   return (
-    <div className="about">
+    <div className="home">
       <div className="brief">
         <h2>Hi I'm</h2>
         <h1>Mayukh</h1>
@@ -22,4 +21,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Home;

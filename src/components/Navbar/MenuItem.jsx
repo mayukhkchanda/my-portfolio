@@ -1,6 +1,5 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
@@ -31,9 +30,7 @@ export const MenuItem = ({ link, text, toggle }) => {
 
   return (
     <motion.div variants={variants} className="link-div" onClick={navigateTo}>
-      <Link to={link} className="nav-link" onClick={toggle}>
-        {text}
-      </Link>
+      <p className="nav-link">{text}</p>
     </motion.div>
   );
 };

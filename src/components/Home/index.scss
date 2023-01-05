@@ -1,9 +1,9 @@
 @import "src/animations";
 @import "src/keyframes";
 
-.about {
+.home {
+  // position: relative;
   opacity: 0;
-
   @include fade-in-animation;
 
   .brief {

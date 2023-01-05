@@ -10,7 +10,12 @@ const TabPanel = (props) => {
       <div className="header">
         <p className="title">
           {`${data.designation} `}
-          <a className="header-link" target="_blank" href={data.website}>
+          <a
+            className="header-link"
+            target="_blank"
+            rel="noreferrer"
+            href={data.website}
+          >
             @{data.company}
           </a>
         </p>

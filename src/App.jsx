@@ -5,6 +5,7 @@ import Home from "components/Home";
 import Experience from "components/Experience";
 import Error from "components/Error";
 import Navbar from "components/Navbar";
+import Social from "components/Social";
 import "./App.scss";
 
 const App = () => {
@@ -12,10 +13,10 @@ const App = () => {
     <div className="App">
       <Router>
         <Navbar />
+        <Social />
         <div className="content">
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/experience" element={<Experience />} />
             <Route exact path="/experience" element={<Experience />} />
             <Route exact path="*" element={<Error />} />
           </Routes>
