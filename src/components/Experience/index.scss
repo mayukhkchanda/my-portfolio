@@ -32,6 +32,10 @@
   }
 }
 
+.MuiPaper-root.experience.short-fade {
+  animation-delay: 0.3s;
+}
+
 @media (max-width: 600px) {
   .MuiPaper-root.experience {
     min-height: 500px;

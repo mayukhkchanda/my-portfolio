@@ -11,11 +11,15 @@ const Home = () => {
         <p>Software Developer</p>
       </div>
       <div className="links">
-        <Link href="/about" title="About" />
-        <Link href="/experience" title="Experience" />
-        <Link href="/education" title="Education" />
-        <Link href="/projects" title="Projects" />
-        <Link href="/contacts" title="Contacts" />
+        <Link href="/about" title="About" state={{ shortFade: true }} />
+        <Link
+          href="/experience"
+          title="Experience"
+          state={{ shortFade: true }}
+        />
+        <Link href="/education" title="Education" state={{ shortFade: true }} />
+        <Link href="/projects" title="Projects" state={{ shortFade: true }} />
+        <Link href="/contacts" title="Contacts" state={{ shortFade: true }} />
       </div>
     </div>
   );
