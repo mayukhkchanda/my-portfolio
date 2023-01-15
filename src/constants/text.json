@@ -1,4 +1,11 @@
-{
+{   
+    "about" : {
+        "heading": "About Me",
+        "content" : [
+            "I am a UI/UX specialist with 2+ years of experience in buildig and shipping customer facing applications using frontend technologies React, Redux, Redux Saga, Redux Thunk, JavaScript(ES6+), Typescript, HTML5, CSS3, SASS, Webpack."
+
+        ]
+    },
     "experience" : {
         "heading": "Experience",
         "companies": [ 

@@ -7,6 +7,7 @@ import Error from "components/Error";
 import Navbar from "components/Navbar";
 import Social from "components/Social";
 import "./App.scss";
+import About from "components/About";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <div className="content">
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/about" element={<About />} />
             <Route exact path="/experience" element={<Experience />} />
             <Route exact path="*" element={<Error />} />
           </Routes>
