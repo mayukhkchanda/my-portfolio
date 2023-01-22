@@ -8,6 +8,7 @@
   max-height: calc(100vh - 80px);
   opacity: 0;
   @include fade-in-animation;
+  max-width: 800px;
   .heading {
     font-size: 1.8rem;
     font-weight: 900;
@@ -26,7 +27,7 @@
     margin: 14px;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   .tech {
     margin: 5px;
@@ -80,6 +81,7 @@
       }
       .tech-stack {
         max-width: 300px;
+        justify-content: space-between;
       }
     }
   }

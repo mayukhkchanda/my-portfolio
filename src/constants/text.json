@@ -67,22 +67,61 @@
             }
         }
     },
-    "projects": {
-        "heading": "Projects",
-        "socialMedia" :{
-            "backgroundUrl": "/assets/images/social-media-app.webp",
-            "descBrief": "A realtime social media application built using React",
-            "descTitle": "Social Media Application",
-            "linkText": "Click to know more",
-            "urlLink": "https://github.com/mayukhkchanda/React-Instagram-Clone"
-        },
-        "chattingApp" :{
-            "backgroundUrl": "/assets/images/chat-app.webp",
-            "descBrief": "A realtime chat application built using React",
-            "descTitle": "Realtime Chat App",
-            "linkText": "Click to know more",
-            "urlLink": "https://github.com/mayukhkchanda/rooms-react-app"
-        }
+    "projectDetails": {
+        "heading": "projects library",
+        "descTxt1": "A playground of things that I've built overtime. Click on each of them to learn more.",
+        "descTxt2": "Technologies/Framework used are listed below.",
+        "technologies": [ "React", "Redux", "Redux", "TypeScript", "JavaScript", "SASS", "Webpack", "Firebase", "Material", "Framer", "Three.js", "React-Three-Fiber" ],
+        "allProjects": [
+            {
+                "backgroundUrl": "/assets/images/ig-project.png",
+                "descBrief": "social media application.",
+                "techs": [ "React", "JavaScript", "Redux-Saga", "SASS", "Firebase", "HTML5", "CSS3" ],
+                "urlLink": "https://react-instagram-clone-bb315.web.app/",
+                "linkTxt": "Visit Website",
+                "githubLink": "https://github.com/mayukhkchanda/React-Instagram-Clone"
+            },
+            {
+                "backgroundUrl": "/assets/images/netflix-proj.png",
+                "descBrief": "netflix clone.",
+                "techs": ["React", "JavaScript", "Redux-Thunk", "Firebase", "HTML5", "CSS3"],
+                "urlLink": "https://netflix-clone-31448.web.app/",
+                "linkTxt": "Visit Website",
+                "githubLink": "https://github.com/mayukhkchanda/React-Netflix-Clone"
+            },
+            {
+                "backgroundUrl": "/assets/images/ecommerce-proj.png",
+                "descBrief": "ecommerce website.",
+                "techs": ["React", "JavaScript", "Redux-Thunk", "Firebase", "HTML5", "CSS3"],
+                "urlLink": "https://react--clone-b551e.web.app/",
+                "linkTxt": "Visit Website",
+                "githubLink": "https://github.com/mayukhkchanda/React-Amazone-Clone"
+            },
+            {
+                "backgroundUrl": "/assets/images/whatsapp-proj.png",
+                "descBrief": "real-time chat app.",
+                "techs": [ "React", "Redux", "JavaScript", "Redux-Thunk", "Firebase", "HTML5", "CSS3" ],
+                "urlLink": "https://rooms-app-66d14.firebaseapp.com/signin",
+                "linkTxt": "Visit Website",
+                "githubLink": "https://github.com/mayukhkchanda/rooms-react-app"
+            },
+            {
+                "backgroundUrl": "/assets/images/wikipedia-proj.png",
+                "descBrief": "wikipedia clone.",
+                "techs": ["React", "Redux", "JavaScript", "HTML5", "CSS3"],
+                "urlLink": "https://mayukhkchanda.github.io/wikipedia-react/",
+                "linkTxt": "Visit Website",
+                "githubLink": "https://github.com/mayukhkchanda/wikipedia-react"
+            },
+            {
+                "backgroundUrl": "/assets/images/portfolio-proj.png",
+                "descBrief": "my portfolio.",
+                "techs": ["React", "Three.JS", "React-Three-Fiber", "Framer-Motion", "JavaScript", "HTML", "SASS"],
+                "urlLink": "#",
+                "linkTxt": "Visit Website",
+                "githubLink": "#"
+            }
+        ]
     },
     "blogs" : {
         "heading" : "Blogs & Links",

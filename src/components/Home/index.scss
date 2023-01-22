@@ -42,3 +42,21 @@
     }
   }
 }
+
+@media all and (max-width: 600px) {
+  .home {
+    .brief {
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

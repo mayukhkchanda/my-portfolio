@@ -6,6 +6,7 @@ import Error from "components/Error";
 import Navbar from "components/Navbar";
 import Social from "components/Social";
 import About from "components/About";
+import Contacts from "components/Contacts";
 import Experience from "components/Experience";
 import Projects from "components/Projects";
 import "./App.scss";
@@ -22,6 +23,7 @@ const App = () => {
             <Route exact path="/about" element={<About />} />
             <Route exact path="/experience" element={<Experience />} />
             <Route exact path="/projects" element={<Projects />} />
+            <Route exact path="/contacts" element={<Contacts />} />
             <Route exact path="*" element={<Error />} />
           </Routes>
         </div>

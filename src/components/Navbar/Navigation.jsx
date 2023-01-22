@@ -18,6 +18,7 @@ const links = [
   { link: "about", text: "about" },
   { link: "experience", text: "experience" },
   { link: "projects", text: "projects" },
+  { link: "contacts", text: "contacts" },
 ];
 
 export const Navigation = (props) => (
