@@ -17,7 +17,6 @@ const Home = () => {
           title="Experience"
           state={{ shortFade: true }}
         />
-        <Link href="/education" title="Education" state={{ shortFade: true }} />
         <Link href="/projects" title="Projects" state={{ shortFade: true }} />
         <Link href="/contacts" title="Contacts" state={{ shortFade: true }} />
       </div>

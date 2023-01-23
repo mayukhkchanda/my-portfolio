@@ -50,7 +50,21 @@
     transform: unset;
 
     .socio-link {
-      width: 50px;
+      width: 65px;
+    }
+    .socio-link.leetcode {
+      width: 65px;
+
+      img {
+        margin-right: 14px;
+      }
+    }
+    .socio-link.linkedin {
+      width: 65px;
+
+      img {
+        margin-right: 16px;
+      }
     }
     .socio-link.github {
       width: 100px;
