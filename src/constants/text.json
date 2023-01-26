@@ -71,7 +71,7 @@
         "heading": "projects library",
         "descTxt1": "A playground of things that I've built overtime. Click on each of them to learn more.",
         "descTxt2": "Technologies/Framework used are listed below.",
-        "technologies": [ "React", "Redux", "Redux", "TypeScript", "JavaScript", "SASS", "Webpack", "Firebase", "Material", "Framer", "Three.js", "React-Three-Fiber" ],
+        "technologies": [ "React", "Redux", "TypeScript", "JavaScript", "SASS", "Webpack", "Firebase", "Material", "Framer", "Three.js", "React-Three-Fiber" ],
         "allProjects": [
             {
                 "backgroundUrl": "/assets/images/ig-project.png",
