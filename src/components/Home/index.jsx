@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "components/Link";
 import "./index.scss";
+import TypeWriter from "./TypeWriter";
 
 const Home = () => {
   return (
@@ -8,7 +9,14 @@ const Home = () => {
       <div className="brief">
         <h2>Hi I'm</h2>
         <h1>Mayukh</h1>
-        <p>Software Developer</p>
+        <TypeWriter
+          str={[
+            "Software Developer",
+            "UI/UX Specialist",
+            "React Developer",
+            "Designer",
+          ]}
+        />
       </div>
       <div className="links">
         <Link href="/about" title="About" state={{ shortFade: true }} />

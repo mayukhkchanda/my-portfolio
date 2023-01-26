@@ -6,3 +6,9 @@
     opacity: 1;
   }
 }
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}

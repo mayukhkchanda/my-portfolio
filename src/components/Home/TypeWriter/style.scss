@@ -1,0 +1,17 @@
+@import "src/animations";
+
+.typewriter {
+  min-width: 350px;
+  min-height: 50px;
+  .caret {
+    border-right: 0.05em solid;
+    animation: caret 1s steps(1) infinite;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .typewriter {
+    min-width: 300px;
+    min-height: 40px;
+  }
+}
