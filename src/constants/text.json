@@ -117,9 +117,9 @@
                 "backgroundUrl": "/assets/images/portfolio-proj.png",
                 "descBrief": "my portfolio.",
                 "techs": ["React", "Three.JS", "React-Three-Fiber", "Framer-Motion", "JavaScript", "HTML", "SASS"],
-                "urlLink": "#",
+                "urlLink": "/",
                 "linkTxt": "Visit Website",
-                "githubLink": "#"
+                "githubLink": "https://github.com/mayukhkchanda/my-portfolio"
             }
         ]
     },
