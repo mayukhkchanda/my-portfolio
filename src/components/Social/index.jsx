@@ -26,7 +26,7 @@ const socialLinks = [
 
 const Social = () => {
   const location = useLocation();
-  const showLinks = location.pathname === "/";
+  const showLinks = location.pathname === "/my-portfolio";
 
   if (!showLinks) return;
 

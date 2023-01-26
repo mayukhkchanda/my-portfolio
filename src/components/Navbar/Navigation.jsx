@@ -14,11 +14,11 @@ const variants = {
 };
 
 const links = [
-  { link: "/", text: "home" },
-  { link: "about", text: "about" },
-  { link: "experience", text: "experience" },
-  { link: "projects", text: "projects" },
-  { link: "contacts", text: "contact" },
+  { link: "/my-portfolio", text: "home" },
+  { link: "/my-portfolio/about", text: "about" },
+  { link: "/my-portfolio/experience", text: "experience" },
+  { link: "/my-portfolio/projects", text: "projects" },
+  { link: "/my-portfolio/contacts", text: "contact" },
 ];
 
 export const Navigation = (props) => (

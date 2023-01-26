@@ -41,7 +41,7 @@ const About = () => {
             const { logoUrl, name } = skill;
             return (
               <div className="grid-item" key={name}>
-                <img src={logoUrl} alt={name} />
+                <img src={process.env.PUBLIC_URL + logoUrl} alt={name} />
                 <p className="skill-name">{name}</p>
               </div>
             );

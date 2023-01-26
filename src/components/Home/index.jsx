@@ -19,14 +19,26 @@ const Home = () => {
         />
       </div>
       <div className="links">
-        <Link href="/about" title="About" state={{ shortFade: true }} />
         <Link
-          href="/experience"
+          href="/my-portfolio/about"
+          title="About"
+          state={{ shortFade: true }}
+        />
+        <Link
+          href="/my-portfolio/experience"
           title="Experience"
           state={{ shortFade: true }}
         />
-        <Link href="/projects" title="Projects" state={{ shortFade: true }} />
-        <Link href="/contacts" title="Contact" state={{ shortFade: true }} />
+        <Link
+          href="/my-portfolio/projects"
+          title="Projects"
+          state={{ shortFade: true }}
+        />
+        <Link
+          href="/my-portfolio/contacts"
+          title="Contact"
+          state={{ shortFade: true }}
+        />
       </div>
     </div>
   );

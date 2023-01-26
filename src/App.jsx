@@ -19,11 +19,15 @@ const App = () => {
         <Social />
         <div className="content">
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/experience" element={<Experience />} />
-            <Route exact path="/projects" element={<Projects />} />
-            <Route exact path="/contacts" element={<Contacts />} />
+            <Route exact path="/my-portfolio" element={<Home />} />
+            <Route exact path="/my-portfolio/about" element={<About />} />
+            <Route
+              exact
+              path="/my-portfolio/experience"
+              element={<Experience />}
+            />
+            <Route exact path="/my-portfolio/projects" element={<Projects />} />
+            <Route exact path="/my-portfolio/contacts" element={<Contacts />} />
             <Route exact path="*" element={<Error />} />
           </Routes>
         </div>
