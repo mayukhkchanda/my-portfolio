@@ -28,7 +28,7 @@ const Scene = () => {
   const cameraRef = useRef(null);
   const earthMap = useLoader(
     TextureLoader,
-    process.env.PUBLIC_URL + "assets/textures/earth.jpg"
+    process.env.PUBLIC_URL + "/assets/textures/earth.jpg"
   );
   const uniforms = useMemo(
     () => ({
