@@ -8,8 +8,8 @@ body {
   font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000;
-    color: #fff;
+  background-color: #fff1b1;
+    color: rgb(255, 255, 255);
 }
 body::-webkit-scrollbar {
   display: none;

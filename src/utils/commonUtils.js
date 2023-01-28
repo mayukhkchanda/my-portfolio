@@ -13,3 +13,5 @@ export const getText = (id)=> {
     const root = document.querySelector(":root");
     root?.style?.setProperty(varName, newValue);
   }
+
+  export const angleToRadian = (angle) => (angle * (Math.PI/180))

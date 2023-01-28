@@ -10,11 +10,17 @@
   @include fade-in-animation;
   max-width: 800px;
   .heading {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 900;
     margin: 10px 0px 24px;
   }
   .desc-container {
+    margin: auto;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 16px 16px 0px 0px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2.9px);
     margin: auto;
   }
   .desc {
@@ -70,14 +76,19 @@
 
 @media all and (max-width: 700px) {
   .projects {
+    .heading {
+      font-size: 2em;
+    }
     .showcase {
       grid-template-columns: 1fr;
       grid-row-gap: 80px;
     }
     .desc-container {
       max-width: 300px;
+      backdrop-filter: none;
+      background: rgba(0, 0, 0, 0.53);
       .desc {
-        font-size: 12px;
+        font-size: 14px;
       }
       .tech-stack {
         max-width: 300px;

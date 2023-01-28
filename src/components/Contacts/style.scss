@@ -1,6 +1,7 @@
 .contacts {
   max-width: 600px;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.43) !important;
+  box-shadow: 6px 8px 0px 0px #b8b8b8 !important;
   a {
     text-decoration: none;
     color: inherit;
@@ -48,7 +49,7 @@
 
   .icon-btn {
     border: 1px solid #f1a92f;
-    background-color: #0000007a;
+    background-color: #00000000;
     display: flex;
     align-items: center;
     padding: 6px 12px;

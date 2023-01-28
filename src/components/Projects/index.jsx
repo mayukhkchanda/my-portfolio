@@ -13,8 +13,9 @@ const Index = () => {
     <div className={`projects ${state?.shortFade ? "short-fade" : ""}`}>
       <h2 className="heading">{porjectDetails.heading}</h2>
       <div className="desc-container">
-        <p className="desc">{porjectDetails.descTxt1}</p>
-        <p className="desc">{porjectDetails.descTxt2}</p>
+        <p className="desc">
+          {porjectDetails.descTxt1} {porjectDetails.descTxt2}
+        </p>
         <div className="tech-stack">
           {porjectDetails.technologies.map((name) => (
             <div key={name} className="tech">

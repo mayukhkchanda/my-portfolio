@@ -2,13 +2,11 @@
 @import "src/keyframes";
 
 .home {
-  // position: relative;
   opacity: 0;
   @include fade-in-animation;
 
   .brief {
     text-align: left;
-    // margin: 0 auto;
     h2 {
       font-size: 3.5rem;
     }
@@ -25,16 +23,16 @@
   .links {
     display: flex;
     flex-direction: column;
-    // margin: 0 auto;
     padding-top: 1rem;
-    // width: 100%;
     a {
-      // padding: 0.5rem 0rem;
       text-decoration: none;
-      color: #fff;
+      color: #616161;
       text-align: left;
       width: fit-content;
       font-size: 1.4rem;
+      &:hover span {
+        color: #000;
+      }
     }
 
     .link {

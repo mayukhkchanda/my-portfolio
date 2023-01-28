@@ -29,7 +29,7 @@ const About = () => {
         ))}
         <p className="content-text">
           I love to build things for the web. Take a look at some of the things
-          I've built <Link href="/projects" title="here" />.
+          I've built <Link href="/my-portfolio/projects" title="here" />.
         </p>
         <p className="content-text">
           Here are few of the technologies I've been working on recently.

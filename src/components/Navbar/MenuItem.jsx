@@ -24,7 +24,7 @@ export const MenuItem = ({ link, text, toggle }) => {
   const navigate = useNavigate();
 
   const navigateTo = () => {
-    navigate(link);
+    navigate(link, { state: { animationDelay: 1 } });
     toggle();
   };
 

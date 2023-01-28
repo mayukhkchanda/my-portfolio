@@ -31,10 +31,10 @@ const App = () => {
             <Route exact path="*" element={<Error />} />
           </Routes>
         </div>
+        <div className="globe">
+          <Canvas />
+        </div>
       </Router>
-      <div className="globe">
-        <Canvas />
-      </div>
     </div>
   );
 };
