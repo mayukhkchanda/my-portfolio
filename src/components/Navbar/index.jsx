@@ -29,7 +29,7 @@ const navbarBgVariant = {
     transition: {
       duration: 0.2,
       type: "tween",
-      delay: 0.6,
+      delay: 0.42,
     },
   },
   open: {
