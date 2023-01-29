@@ -22,22 +22,22 @@ const Home = () => {
         <Link
           href="/my-portfolio/about"
           title="About"
-          state={{ shortFade: true }}
+          state={{ shortFade: false }}
         />
         <Link
           href="/my-portfolio/experience"
           title="Experience"
-          state={{ shortFade: true }}
+          state={{ shortFade: false }}
         />
         <Link
           href="/my-portfolio/projects"
           title="Projects"
-          state={{ shortFade: true }}
+          state={{ shortFade: false }}
         />
         <Link
           href="/my-portfolio/contacts"
           title="Contact"
-          state={{ shortFade: true }}
+          state={{ shortFade: false }}
         />
       </div>
     </div>

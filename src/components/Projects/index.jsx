@@ -10,7 +10,7 @@ const Index = () => {
   const location = useLocation();
   const { state } = location || {};
   return (
-    <div className={`projects ${state?.shortFade ? "short-fade" : ""}`}>
+    <div className={`projects ${state?.longFade ? "long-fade" : ""}`}>
       <h2 className="heading">{porjectDetails.heading}</h2>
       <div className="desc-container">
         <p className="desc">

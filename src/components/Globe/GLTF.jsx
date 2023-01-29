@@ -14,6 +14,7 @@ const Model = () => {
   );
   const cameraRef = useRef(null);
   const controlsRef = useRef(null);
+  const directionalLightRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,6 +29,14 @@ const Model = () => {
 
     const { state, pathname } = location;
     const animationDelay = state?.animationDelay ? state?.animationDelay : 0.25;
+
+    gsap.to(cameraRef.current.position, {
+      x: 0,
+      y: 5,
+      z: 50,
+      duration: 1,
+      delay: animationDelay,
+    });
 
     if (
       (pathname === "/my-portfolio" || pathname === "/my-portfolio/") &&
@@ -160,6 +169,16 @@ const Model = () => {
         maxPolarAngle={angleToRadian(180)}
       />
       <ambientLight intensity={1} color={0xffffff} />
+      <pointLight
+        color="#ee82ee"
+        ref={directionalLightRef}
+        position={[0, 0, 5]}
+      />
+      <pointLight
+        color="#18ffff"
+        ref={directionalLightRef}
+        position={[-2, 4, 5]}
+      />
       <primitive object={gltf.scene} />
     </>
   );

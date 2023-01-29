@@ -17,7 +17,7 @@
   .desc-container {
     margin: auto;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.35);
     border-radius: 16px 16px 0px 0px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2.9px);
@@ -72,6 +72,10 @@
 
 .projects.short-fade {
   animation-delay: 0.3s;
+}
+
+.projects.long-fade {
+  animation-delay: 1.8s;
 }
 
 @media all and (max-width: 700px) {

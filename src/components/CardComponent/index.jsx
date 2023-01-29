@@ -11,7 +11,7 @@ const Index = (props) => {
   return (
     <Card
       className={`card-component ${className} ${
-        state?.shortFade ? "short-fade" : ""
+        state?.longFade ? "long-fade" : ""
       }`}
     >
       {props.children}

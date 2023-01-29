@@ -14,7 +14,7 @@ const skillList = [
   { logoUrl: "/assets/images/sass-logo.png", name: "Sass" },
   { logoUrl: "/assets/images/git-logo.png", name: "GIT" },
   { logoUrl: "/assets/images/webpack-logo.png", name: "Webpack" },
-  { logoUrl: "/assets/images/python-logo.png", name: "Python" },
+  { logoUrl: "/assets/images/three-js.png", name: "Three.JS" },
 ];
 
 const About = () => {

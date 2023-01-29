@@ -20,6 +20,9 @@
 .MuiPaper-root.card-component.short-fade {
   animation-delay: 0.3s;
 }
+.MuiPaper-root.card-component.long-fade {
+  animation-delay: 1.8s;
+}
 
 @media (max-width: 600px) {
   .MuiPaper-root.card-component {
