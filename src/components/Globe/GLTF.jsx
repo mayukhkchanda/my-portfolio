@@ -9,7 +9,7 @@ import { useLocation } from "react-router";
 const getTransformations = (pathname, animationDelay) => {
   let scenePos, sceneRot, camPos;
   if (pathname === "/my-portfolio" || pathname === "/my-portfolio/") {
-    scenePos = { x: 0, y: 0, z: 0, duration: 1, delay: animationDelay };
+    scenePos = { x: 3, y: -12, z: 0, duration: 1, delay: animationDelay };
     sceneRot = {
       x: angleToRadian(5),
       y: -1 * angleToRadian(90),
@@ -17,7 +17,7 @@ const getTransformations = (pathname, animationDelay) => {
       duration: 1,
       delay: animationDelay,
     };
-    camPos = { x: 0, y: 0, z: 50, duration: 1, delay: animationDelay };
+    camPos = { x: 0, y: 0, z: 26, duration: 1, delay: animationDelay };
   } else if (pathname === "/my-portfolio/about") {
     scenePos = { x: 0, y: -12, z: 0, duration: 1, delay: animationDelay };
     sceneRot = {
@@ -62,6 +62,8 @@ const getTransformations = (pathname, animationDelay) => {
   return { scenePos, sceneRot, camPos };
 };
 
+const innerWidth = window.innerWidth;
+
 const Model = () => {
   const gltf = useLoader(
     GLTFLoader,
@@ -70,14 +72,15 @@ const Model = () => {
   const cameraRef = useRef(null);
   const controlsRef = useRef(null);
   const directionalLightRef = useRef(null);
+  const gltfRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
-    if (!controlsRef.current) return;
+    if (!gltfRef.current) return;
     gltf.scene.scale.set(5, 5, 5);
 
     gltf.scene.rotation.set(angleToRadian(5), -1 * angleToRadian(90), 0);
-  }, [controlsRef.current]);
+  }, [gltfRef.current]);
 
   useEffect(() => {
     if (!location?.pathname) return;
@@ -93,121 +96,6 @@ const Model = () => {
     gsap.to(gltf.scene.position, scenePos);
     gsap.to(gltf.scene.rotation, sceneRot);
     gsap.to(cameraRef.current.position, camPos);
-
-    // if (
-    //   (pathname === "/my-portfolio" || pathname === "/my-portfolio/") &&
-    //   cameraRef.current
-    // ) {
-    //   gsap.to(gltf.scene.position, {
-    //     x: 0,
-    //     y: 0,
-    //     z: 0,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(gltf.scene.rotation, {
-    //     x: angleToRadian(5),
-    //     y: -1 * angleToRadian(90),
-    //     z: 0,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(cameraRef.current.position, {
-    //     x: 0,
-    //     y: 0,
-    //     z: 50,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    // } else if (pathname === "/my-portfolio/about" && cameraRef.current) {
-    //   gsap.to(gltf.scene.position, {
-    //     x: 0,
-    //     y: -12,
-    //     z: 0,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(gltf.scene.rotation, {
-    //     x: 0,
-    //     y: -1 * angleToRadian(90),
-    //     z: 0,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(cameraRef.current.position, {
-    //     x: 0,
-    //     y: 0,
-    //     z: 10,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    // } else if (pathname === "/my-portfolio/experience" && cameraRef.current) {
-    //   gsap.to(gltf.scene.position, {
-    //     x: -18,
-    //     y: -15,
-    //     z: -10,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(gltf.scene.rotation, {
-    //     x: 0,
-    //     y: -1 * angleToRadian(90),
-    //     z: 0,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(cameraRef.current.position, {
-    //     x: 0,
-    //     y: 0,
-    //     z: 15,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    // } else if (pathname === "/my-portfolio/projects" && cameraRef.current) {
-    //   gsap.to(gltf.scene.position, {
-    //     x: 0,
-    //     y: -4,
-    //     z: 0,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(gltf.scene.rotation, {
-    //     x: angleToRadian(90),
-    //     y: -1 * angleToRadian(90),
-    //     z: 0,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(cameraRef.current.position, {
-    //     x: 0,
-    //     y: 0,
-    //     z: 20,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    // } else if (pathname === "/my-portfolio/contacts" && cameraRef.current) {
-    //   gsap.to(gltf.scene.position, {
-    //     x: -25,
-    //     y: -4,
-    //     z: 0,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(gltf.scene.rotation, {
-    //     x: angleToRadian(90),
-    //     y: -1 * angleToRadian(90),
-    //     z: 0,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    //   gsap.to(cameraRef.current.position, {
-    //     x: 0,
-    //     y: 0,
-    //     z: 8,
-    //     duration: 1,
-    //     delay: animationDelay,
-    //   });
-    // }
   }, [location?.pathname, cameraRef.current]);
 
   return (
@@ -218,12 +106,14 @@ const Model = () => {
         position={[0, 5, 50]}
         ref={cameraRef}
       />
-      <OrbitControls
-        ref={controlsRef}
-        maxAzimuthAngle={angleToRadian(45)}
-        minPolarAngle={angleToRadian(0)}
-        maxPolarAngle={angleToRadian(180)}
-      />
+      {innerWidth < 600 ? null : (
+        <OrbitControls
+          ref={controlsRef}
+          maxAzimuthAngle={angleToRadian(45)}
+          minPolarAngle={angleToRadian(0)}
+          maxPolarAngle={angleToRadian(180)}
+        />
+      )}
       <ambientLight intensity={1} color={0xffffff} />
       <pointLight
         color="#ee82ee"
@@ -235,7 +125,7 @@ const Model = () => {
         ref={directionalLightRef}
         position={[-2, 4, 5]}
       />
-      <primitive object={gltf.scene} />
+      <primitive object={gltf.scene} ref={gltfRef} />
     </>
   );
 };
