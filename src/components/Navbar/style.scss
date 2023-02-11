@@ -2,11 +2,15 @@
   position: absolute;
   z-index: 99;
   height: 100%;
-  width: 100%;
+  width: 300px;
+  right: 0;
+
   .menu {
     position: absolute;
-    right: 1.5rem;
-    top: 1rem;
+    // right: 1.5rem;
+    // top: 1rem;
+    right: 50px;
+    top: 39px;
     background-color: #555;
     width: 40px;
     height: 40px;
@@ -37,17 +41,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100px;
+      height: 70px;
       width: 100%;
       overflow: hidden;
-      background-color: #424242;
+      background-color: transparent; //#424242;
       margin: auto;
       width: 80%;
       cursor: pointer;
 
       .nav-link {
         text-decoration: none;
-        color: #fff;
+        color: #333; //#fff;
         font-size: 1.3em;
       }
     }
@@ -62,6 +66,20 @@
     top: 0;
     left: 0;
     // z-index: 9;
-    background-color: #3c3c3c;
+    width: 300px;
+    background-color: #fefff4; //#3c3c3c;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navbar {
+    .links-container {
+      .link-div {
+        height: 60px;
+        .nav-link {
+          font-size: 1em;
+        }
+      }
+    }
   }
 }

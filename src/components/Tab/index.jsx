@@ -5,37 +5,36 @@ import TabPanel from "./TabPanel";
 import "./index.scss";
 
 const Index = (props) => {
-  const [value, setValue] = useState(0);
-  const [mobileView, setMobileView] = useState(false);
+  const [tabState, setTabState] = useState({ index: 0, mobileVw: false });
   const { tabPanelData } = props;
 
   useEffect(() => {
     const width = window.innerWidth;
     if (width < 600) {
-      setMobileView(true);
+      setTabState((prevState) => ({ ...prevState, mobileVw: true }));
     }
   }, []);
 
-  const handleChange = (_, newValue) => {
-    setValue(newValue);
+  const handleChange = (_, newIndex) => {
+    setTabState((prevState) => ({ ...prevState, index: newIndex }));
   };
 
+  const { index, mobileVw } = tabState;
+
   return (
-    <div className={`tabs-root ${mobileView ? "mobile" : ""}`}>
+    <div className={`tabs-root ${mobileVw ? "mobile" : ""}`}>
       <Tabs
         className="tabs"
-        value={value}
+        value={index}
         onChange={handleChange}
         aria-label="tabs"
-        orientation={mobileView ? "horizontal" : "vertical"}
+        orientation={mobileVw ? "horizontal" : "vertical"}
         variant="scrollable"
       >
         <Tab className="tab" label="Amdocs" id="tab-0" />
         <Tab className="tab" label="Cognizant" id="tab-1" />
       </Tabs>
-      {tabPanelData.map((data, index) => (
-        <TabPanel index={index} value={value} key={data?.company} data={data} />
-      ))}
+      <TabPanel key={tabPanelData[index]?.company} data={tabPanelData[index]} />
     </div>
   );
 };

@@ -9,9 +9,9 @@ import { useLocation } from "react-router";
 const getTransformations = (pathname, animationDelay) => {
   let scenePos, sceneRot, camPos;
   if (pathname === "/my-portfolio" || pathname === "/my-portfolio/") {
-    scenePos = { x: 3, y: -12, z: 0, duration: 1, delay: animationDelay };
+    scenePos = { x: 3.0, y: -12, z: 0, duration: 1, delay: animationDelay };
     sceneRot = {
-      x: angleToRadian(5),
+      x: angleToRadian(3),
       y: -1 * angleToRadian(90),
       z: 0,
       duration: 1,
@@ -79,7 +79,7 @@ const Model = () => {
     if (!gltfRef.current) return;
     gltf.scene.scale.set(5, 5, 5);
 
-    gltf.scene.rotation.set(angleToRadian(5), -1 * angleToRadian(90), 0);
+    gltf.scene.rotation.set(angleToRadian(3), -1 * angleToRadian(90), 0);
   }, [gltfRef.current]);
 
   useEffect(() => {

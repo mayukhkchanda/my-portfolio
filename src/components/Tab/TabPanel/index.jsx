@@ -1,10 +1,9 @@
 import React from "react";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import "./style.scss";
+// import "./style.scss";
 
 const TabPanel = (props) => {
-  const { data, index, value } = props;
-  if (index !== value) return;
+  const { data } = props;
   return (
     <div className="tab-panel">
       <div className="header">

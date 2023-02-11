@@ -27,7 +27,6 @@
     }
     .header-link:visited::after {
       width: 100%;
-      // transition: width 350ms ease;
     }
     .title {
       font-size: 18px;
@@ -37,7 +36,6 @@
     .duration {
       font-size: 14px;
       font-weight: 600;
-      // color: #333;
     }
   }
 
@@ -54,8 +52,8 @@
       }
       p {
         text-align: left;
-        font-size: 13px;
-        font-weight: 500;
+        font-size: 12px;
+        font-weight: 400;
         padding-top: 3px;
       }
     }

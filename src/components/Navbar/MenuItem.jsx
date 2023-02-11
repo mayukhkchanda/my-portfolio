@@ -3,16 +3,33 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
+// const variants = {
+//   open: {
+//     y: 0,
+//     opacity: 1,
+//     transition: {
+//       y: { stiffness: 1000 },
+//     },
+//   },
+//   closed: {
+//     y: "-110%",
+//     opacity: 0,
+//     transition: {
+//       y: { stiffness: 1000 },
+//     },
+//   },
+// };
+
 const variants = {
   open: {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000 },
+      y: { stiffness: 1000, velocity: -100 },
     },
   },
   closed: {
-    y: "-110%",
+    y: 50,
     opacity: 0,
     transition: {
       y: { stiffness: 1000 },

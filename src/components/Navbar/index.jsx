@@ -23,20 +23,42 @@ const navbarVariant = {
   },
 };
 
+// const navbarBgVariant = {
+//   closed: {
+//     y: "-110%",
+//     transition: {
+//       duration: 0.2,
+//       type: "tween",
+//       delay: 0.42,
+//     },
+//   },
+//   open: {
+//     y: "0%",
+//     transition: {
+//       duration: 0.2,
+//       type: "tween",
+//     },
+//   },
+// };
+
+const height = window.innerHeight;
+
 const navbarBgVariant = {
-  closed: {
-    y: "-110%",
+  open: {
+    clipPath: `circle(${height * 2 + 200}px at 230px 60px)`,
     transition: {
-      duration: 0.2,
-      type: "tween",
-      delay: 0.42,
+      type: "spring",
+      stiffness: 30,
+      restDelta: 2,
     },
   },
-  open: {
-    y: "0%",
+  closed: {
+    clipPath: "circle(20px at 230px 60px)",
     transition: {
-      duration: 0.2,
-      type: "tween",
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
     },
   },
 };
