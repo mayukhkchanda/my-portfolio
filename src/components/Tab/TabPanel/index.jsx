@@ -1,6 +1,5 @@
 import React from "react";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-// import "./style.scss";
 
 const TabPanel = (props) => {
   const { data } = props;

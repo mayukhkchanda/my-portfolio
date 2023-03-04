@@ -1,19 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { TextureLoader } from "three/src/loaders/TextureLoader";
-import {
-  ContactShadows,
-  Environment,
-  Html,
-  OrbitControls,
-  PerspectiveCamera,
-} from "@react-three/drei";
+import { Html, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { angleToRadian } from "utils/commonUtils";
 import { useLocation } from "react-router";
 import Icon from "./Icons";
 import Home from "components/Home";
+import { LaptopModel } from "./SceneMinified";
 
 const getTransformations = (pathname, animationDelay) => {
   let scenePos, sceneRot, camPos;
@@ -74,23 +66,9 @@ const getTransformations = (pathname, animationDelay) => {
 const innerWidth = window.innerWidth;
 
 const Model = () => {
-  const gltf = useLoader(
-    GLTFLoader,
-    process.env.PUBLIC_URL + "/assets/gltfs/voxel_web_development/scene.gltf"
-  );
-
   const cameraRef = useRef(null);
-  const controlsRef = useRef(null);
-  const directionalLightRef = useRef(null);
-  const gltfRef = useRef(null);
+  const groupRef = useRef(null);
   const location = useLocation();
-  console.log(gltf);
-
-  useEffect(() => {
-    if (!gltfRef.current) return;
-    gltf.scene.scale.set(5, 5, 5);
-    gltf.scene.rotation.set(angleToRadian(0), -1 * angleToRadian(90), 0);
-  }, [gltfRef.current]);
 
   useEffect(() => {
     if (!location?.pathname) return;
@@ -103,8 +81,8 @@ const Model = () => {
       animationDelay
     );
     if (!scenePos || !camPos || !sceneRot) return;
-    gsap.to(gltfRef.current.position, scenePos);
-    gsap.to(gltfRef.current.rotation, sceneRot);
+    gsap.to(groupRef.current.position, scenePos);
+    gsap.to(groupRef.current.rotation, sceneRot);
     gsap.to(cameraRef.current.position, camPos);
   }, [location?.pathname]);
   const isIconVisible =
@@ -114,14 +92,13 @@ const Model = () => {
   return (
     <>
       <PerspectiveCamera
-        args={[45, window.innerWidth / window.innerHeight, 1, 2000]}
+        args={[45, window.innerWidth / window.innerHeight, 1, 250]}
         makeDefault
         position={[0, 5, 50]}
         ref={cameraRef}
       />
       {innerWidth < 600 ? null : (
         <OrbitControls
-          ref={controlsRef}
           maxAzimuthAngle={angleToRadian(45)}
           minPolarAngle={angleToRadian(0)}
           maxPolarAngle={angleToRadian(120)}
@@ -129,19 +106,10 @@ const Model = () => {
         />
       )}
       <ambientLight intensity={1} color={0xffffff} />
-
-      <pointLight
-        color="#ee82ee"
-        ref={directionalLightRef}
-        position={[0, 0, 5]}
-      />
-      <pointLight
-        color="#18ffff"
-        ref={directionalLightRef}
-        position={[-2, 4, 5]}
-      />
-      <group ref={gltfRef}>
-        <mesh geometry={gltf.nodes["laptop001_1"].geometry}>
+      <pointLight color="#ee82ee" position={[0, 0, 5]} />
+      <pointLight color="#18ffff" position={[-2, 4, 5]} />
+      <group ref={groupRef}>
+        <mesh>
           <Html
             className="content"
             position={[-2, 11, -8.5]}
@@ -149,8 +117,12 @@ const Model = () => {
             transform
             occlude
           >
-            <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
-              {isIconVisible ? <Home /> : null}
+            <div
+              className="wrapper"
+              onPointerDown={(e) => e.stopPropagation()}
+              style={{ opacity: isIconVisible ? "1" : "0" }}
+            >
+              <Home />
             </div>
           </Html>
         </mesh>
@@ -186,7 +158,7 @@ const Model = () => {
             url={process.env.PUBLIC_URL + "/assets/images/email.jpg"}
           />
         </group>
-        <primitive object={gltf.scene} />
+        <LaptopModel />
       </group>
     </>
   );

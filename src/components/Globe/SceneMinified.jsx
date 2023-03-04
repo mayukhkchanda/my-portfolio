@@ -7,36 +7,41 @@ Source: https://sketchfab.com/3d-models/voxel-web-development-50ad959d6c6b479980
 Title: Voxel Web Development
 */
 
-import React, { useRef } from "react";
+import React from "react";
 import { useGLTF } from "@react-three/drei";
+import { angleToRadian } from "utils/commonUtils";
 
-export function Model(props) {
+export function LaptopModel(props) {
   const { nodes, materials } = useGLTF(
     process.env.PUBLIC_URL +
       "/assets/gltfs/voxel_web_development/scene-transformed.glb"
   );
+
   return (
-    <group {...props} dispose={null}>
+    <group {...props} scale={[5, 5, 5]} dispose={null}>
       <mesh
         name="Object_4"
         geometry={nodes.Object_4.geometry}
         material={materials.palette}
-        rotation={[Math.PI / 2, 0, 0]}
+        rotation={[angleToRadian(90), 0, 1 * angleToRadian(90)]}
       />
       <mesh
         name="Object_6"
         geometry={nodes.Object_6.geometry}
         material={materials["palette.001"]}
-        rotation={[Math.PI / 2, 0, 0]}
+        rotation={[angleToRadian(90), 0, 1 * angleToRadian(90)]}
       />
       <mesh
         name="Object_8"
         geometry={nodes.Object_8.geometry}
         material={materials["palette.002"]}
-        rotation={[Math.PI / 2, 0, 0]}
+        rotation={[angleToRadian(90), 0, 1 * angleToRadian(90)]}
       />
     </group>
   );
 }
 
-useGLTF.preload("/scene-transformed.glb");
+useGLTF.preload(
+  process.env.PUBLIC_URL +
+    "/assets/gltfs/voxel_web_development/scene-transformed.glb"
+);

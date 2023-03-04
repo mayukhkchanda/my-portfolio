@@ -49,7 +49,7 @@ const Scene = () => {
       if (groupRef.current) {
         const mouseX = (e.clientX / window.innerWidth) * 2 - 1;
         const mouseY = (e.clientY / window.innerHeight) * 2 - 1;
-        // groupRef.current.rotation.y += x * 0.01;
+
         gsap.to(groupRef.current.rotation, {
           x: mouseY * 0.2,
           y: mouseX * 0.1,

@@ -1,5 +1,4 @@
 import React from "react";
-import { useLocation } from "react-router";
 import { getText } from "utils/commonUtils";
 import Card from "components/CardComponent";
 import Project from "./Project";

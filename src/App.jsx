@@ -1,7 +1,6 @@
 import React from "react";
 import Canvas from "components/Globe/Canvas";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "components/Home";
 import Error from "components/Error";
 import Navbar from "components/Navbar";
 import Social from "components/Social";
