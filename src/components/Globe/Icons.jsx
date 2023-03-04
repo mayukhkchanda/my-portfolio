@@ -51,9 +51,9 @@ function Icon({ iconPos, textPos, text, textureMap, link, visible, url }) {
       0.05
     );
   });
-  console.log(imageRef.current);
+  // console.log(imageRef.current);
   return (
-    <group ref={groupRef} visible={visible}>
+    <group ref={groupRef}>
       <Image
         scale={[1.8, 1.8]}
         ref={imageRef}

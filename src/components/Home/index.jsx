@@ -5,9 +5,10 @@ import TypeWriter from "./TypeWriter";
 
 const innerWidth = window.innerWidth;
 
-const Home = () => {
+const Home = (props) => {
+  const { visible } = props;
   return (
-    <div className="home">
+    <div className={`home ${visible ? "" : "hidden"}`}>
       <div className="brief">
         <h2>Hi I'm</h2>
         <h1>Mayukh</h1>

@@ -46,7 +46,7 @@ const getTransformations = (pathname, animationDelay) => {
       duration: 1,
       delay: animationDelay,
     };
-    camPos = { x: 0, y: 0, z: 25, duration: 1, delay: animationDelay };
+    camPos = { x: 0, y: 0, z: 23, duration: 1, delay: animationDelay };
   } else if (pathname === "/my-portfolio/projects") {
     scenePos = { x: 0, y: -4, z: 0, duration: 1, delay: animationDelay };
     sceneRot = {
@@ -84,6 +84,7 @@ const Model = () => {
   const directionalLightRef = useRef(null);
   const gltfRef = useRef(null);
   const location = useLocation();
+  console.log(gltf);
 
   useEffect(() => {
     if (!gltfRef.current) return;
@@ -105,7 +106,7 @@ const Model = () => {
     gsap.to(gltfRef.current.position, scenePos);
     gsap.to(gltfRef.current.rotation, sceneRot);
     gsap.to(cameraRef.current.position, camPos);
-  }, [location?.pathname, cameraRef.current]);
+  }, [location?.pathname]);
   const isIconVisible =
     location?.pathname === "/my-portfolio" ||
     location?.pathname === "/my-portfolio/";
@@ -140,29 +141,24 @@ const Model = () => {
         position={[-2, 4, 5]}
       />
       <group ref={gltfRef}>
-        {isIconVisible && (
-          <mesh geometry={gltf.nodes["laptop001_1"].geometry}>
-            <Html
-              className="content"
-              position={[-2, 11, -8.5]}
-              scale={[1.5, 1.5, 1.5]}
-              transform
-              occlude
-            >
-              <div
-                className="wrapper"
-                onPointerDown={(e) => e.stopPropagation()}
-              >
-                <Home />
-              </div>
-            </Html>
-          </mesh>
-        )}
+        <mesh geometry={gltf.nodes["laptop001_1"].geometry}>
+          <Html
+            className="content"
+            position={[-2, 11, -8.5]}
+            scale={[1.5, 1.5, 1.5]}
+            transform
+            occlude
+          >
+            <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
+              {isIconVisible ? <Home /> : null}
+            </div>
+          </Html>
+        </mesh>
+
         <group visible={isIconVisible}>
           <Icon
             iconPos={[-8, 8, -8.5]}
             textPos={[-9.1, 6.0, -8.5]}
-            visible={isIconVisible}
             text="About Me"
             link={"/my-portfolio/about"}
             url={process.env.PUBLIC_URL + "/assets/images/about-me.png"}
@@ -170,7 +166,6 @@ const Model = () => {
           <Icon
             iconPos={[-4, 8, -8.5]}
             textPos={[-5.1, 6.0, -8.5]}
-            visible={isIconVisible}
             text="Experience"
             link={"/my-portfolio/experience"}
             url={process.env.PUBLIC_URL + "/assets/images/office-icon.jpg"}
@@ -179,7 +174,6 @@ const Model = () => {
           <Icon
             iconPos={[0, 8, -8.5]}
             textPos={[-1.1, 6.0, -8.5]}
-            visible={isIconVisible}
             text="Projects"
             link={"/my-portfolio/projects"}
             url={process.env.PUBLIC_URL + "/assets/images/projects-icons.jpg"}
@@ -187,7 +181,6 @@ const Model = () => {
           <Icon
             iconPos={[4, 8, -8.5]}
             textPos={[3.1, 6.0, -8.5]}
-            visible={isIconVisible}
             text="Contact"
             link={"/my-portfolio/contacts"}
             url={process.env.PUBLIC_URL + "/assets/images/email.jpg"}
