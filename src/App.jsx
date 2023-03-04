@@ -19,7 +19,7 @@ const App = () => {
         <Social />
         <div className="content">
           <Routes>
-            <Route exact path="/my-portfolio" element={<Home />} />
+            <Route exact path="/my-portfolio" element={<></>} />
             <Route exact path="/my-portfolio/about" element={<About />} />
             <Route
               exact
