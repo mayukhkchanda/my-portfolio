@@ -23,23 +23,6 @@ const navbarVariant = {
   },
 };
 
-// const navbarBgVariant = {
-//   closed: {
-//     y: "-110%",
-//     transition: {
-//       duration: 0.2,
-//       type: "tween",
-//       delay: 0.42,
-//     },
-//   },
-//   open: {
-//     y: "0%",
-//     transition: {
-//       duration: 0.2,
-//       type: "tween",
-//     },
-//   },
-// };
 
 const height = window.innerHeight;
 
@@ -78,6 +61,14 @@ const Navbar = () => {
 
       <Navigation toggle={() => toggleOpen()} />
       <motion.div className="nav-bg" variants={navbarBgVariant}></motion.div>
+
+      <a initial={false} href="https://www.linkedin.com/in/mayukh-chanda-9a0080172/"
+        target="_blank"
+        rel="noreferrer"
+        className={`nav-footer ${isOpen ? "visible" : "hidden"}`}
+      >
+        <span className="nav-footer-text">Made with ❤️ by Mayukh</span>
+      </a>
     </motion.nav>
   );
 };

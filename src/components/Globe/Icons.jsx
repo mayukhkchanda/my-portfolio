@@ -14,20 +14,23 @@ const fontProps = {
   maxWidth: 2.5,
   "material-toneMapped": false,
 };
-function Icon({ iconPos, textPos, text, link, url }) {
+function Icon({ iconPos, textPos, text, link, url, invalidate }) {
   const textRef = useRef();
   const groupRef = useRef();
   const [hovered, setHovered] = useState(false);
+
   const over = (e) => {
     e.stopPropagation();
+    invalidate(60);
     setHovered(true);
   };
-  const out = () => setHovered(false);
+  const out = () => { invalidate(60); setHovered(false) };
   const navigate = useNavigate();
 
   const navigateTo = () => {
     setTimeout(() => {
       navigate(link, { state: { animationDelay: 1.2, longFade: true } });
+      invalidate(60);
     }, 800);
   };
 
@@ -49,12 +52,15 @@ function Icon({ iconPos, textPos, text, link, url }) {
         raycast={() => null}
         position={iconPos}
         url={url}
+        onPointerOver={over}
+        onPointerOut={out}
+        onClick={() => navigateTo()}
       />
       <Text
         ref={textRef}
         onPointerOver={over}
         onPointerOut={out}
-        onClick={navigateTo}
+        onClick={() => navigateTo()}
         position={textPos}
         {...fontProps}
         children={text}

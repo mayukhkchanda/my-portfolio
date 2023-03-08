@@ -1,12 +1,53 @@
 import React from "react";
-import Link from "components/Link";
-import "./index.scss";
 import TypeWriter from "./TypeWriter";
+import "./index.scss";
 
-const innerWidth = window.innerWidth;
+const iconsList = [
+  {
+    text: "About Me",
+    link: "/my-portfolio/about",
+    url: "/assets/images/about-me.png",
+    imgClass: "",
+    textClass: ""
+  },
+  {
+    text: "Experience",
+    link: "/my-portfolio/experience",
+    url: "/assets/images/office-icon.jpg",
+    imgClass: "xs",
+    textClass: "pt-4"
 
+  },
+  {
+    text: "Projects",
+    link: "/my-portfolio/projects",
+    url: "/assets/images/projects-icons.jpg",
+    imgClass: "xs",
+    textClass: "pt-4"
+
+  },
+  {
+    text: "Contact",
+    link: "/my-portfolio/contacts",
+    url: "/assets/images/email.jpg",
+    imgClass: "xs",
+    textClass: "pt-4"
+
+  },
+]
 const Home = (props) => {
-  const { visible } = props;
+  const { visible, invalidate, navigate } = props;
+
+  const navigateTo = (e, link) => {
+    e.preventDefault();
+    setTimeout(() => {
+      navigate(link, { state: { animationDelay: 1.2, longFade: true } });
+      invalidate(60);
+    }, 800);
+  };
+
+
+
   return (
     <div className={`home ${visible ? "" : "hidden"}`}>
       <div className="brief">
@@ -21,30 +62,14 @@ const Home = (props) => {
           ]}
         />
       </div>
-      {innerWidth < 600 ? (
-        <div className="links">
-          <Link
-            href="/my-portfolio/about"
-            title="About"
-            state={{ shortFade: false }}
-          />
-          <Link
-            href="/my-portfolio/experience"
-            title="Experience"
-            state={{ shortFade: false }}
-          />
-          <Link
-            href="/my-portfolio/projects"
-            title="Projects"
-            state={{ shortFade: false }}
-          />
-          <Link
-            href="/my-portfolio/contacts"
-            title="Contact"
-            state={{ shortFade: false }}
-          />
-        </div>
-      ) : null}
+      <div className="icons">
+        {iconsList.map(({ link, text, url, imgClass, textClass }, index) => (
+          <div key={link} className={`icon ${index === 0 ? "ml-0" : ""}`} onClick={(e) => navigateTo(e, link)}>
+            <img className={`icon-img ${imgClass ?? ""}`} src={process.env.PUBLIC_URL + url} alt="about-me" />
+            <p className={`icon-text ${textClass ?? ""}`}>{text}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

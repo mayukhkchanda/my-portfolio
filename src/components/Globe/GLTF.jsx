@@ -2,10 +2,11 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Html, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { angleToRadian } from "utils/commonUtils";
-import { useLocation } from "react-router";
-import Icon from "./Icons";
+import { useLocation, useNavigate } from "react-router";
 import Home from "components/Home";
 import { LaptopModel } from "./SceneMinified";
+import { useThree } from "@react-three/fiber";
+
 
 const getTransformations = (pathname, animationDelay) => {
   let scenePos, sceneRot, camPos;
@@ -67,10 +68,13 @@ const innerWidth = window.innerWidth;
 
 const Model = () => {
   const cameraRef = useRef(null);
+  const controlsRef = useRef(null);
   const groupRef = useRef(null);
   const location = useLocation();
+  const { invalidate, camera, gl } = useThree()
 
   useEffect(() => {
+
     if (!location?.pathname) return;
 
     const { state, pathname } = location;
@@ -84,6 +88,11 @@ const Model = () => {
     gsap.to(groupRef.current.position, scenePos);
     gsap.to(groupRef.current.rotation, sceneRot);
     gsap.to(cameraRef.current.position, camPos);
+
+    setTimeout(() => {
+      invalidate(60);
+    }, 800);
+
   }, [location?.pathname]);
   const isIconVisible =
     location?.pathname === "/my-portfolio" ||
@@ -94,25 +103,26 @@ const Model = () => {
       <PerspectiveCamera
         args={[45, window.innerWidth / window.innerHeight, 1, 250]}
         makeDefault
-        position={[0, 5, 50]}
+        position={[0, 5, 100]}
+
         ref={cameraRef}
       />
-      {innerWidth < 600 ? null : (
-        <OrbitControls
-          maxAzimuthAngle={angleToRadian(45)}
-          minPolarAngle={angleToRadian(0)}
-          maxPolarAngle={angleToRadian(120)}
-          enablePan={false}
-        />
-      )}
+      <OrbitControls
+        maxAzimuthAngle={angleToRadian(45)}
+        minPolarAngle={angleToRadian(0)}
+        maxPolarAngle={angleToRadian(120)}
+        enablePan={false}
+        args={[camera, gl.domElement]}
+        ref={controlsRef}
+      />
       <ambientLight intensity={1} color={0xffffff} />
       <pointLight color="#ee82ee" position={[0, 0, 5]} />
       <pointLight color="#18ffff" position={[-2, 4, 5]} />
-      <group ref={groupRef}>
+      <group rotation={[0, angleToRadian(75), 0]} ref={groupRef}>
         <mesh>
           <Html
             className="content"
-            position={[-2, 11, -8.5]}
+            position={[innerWidth < 600 ? -2 : -1, 5.5, -9]}
             scale={[1.5, 1.5, 1.5]}
             transform
             occlude
@@ -122,42 +132,11 @@ const Model = () => {
               onPointerDown={(e) => e.stopPropagation()}
               style={{ opacity: isIconVisible ? "1" : "0" }}
             >
-              <Home />
+              <Home invalidate={invalidate} navigate={useNavigate()} />
             </div>
           </Html>
         </mesh>
 
-        <group visible={isIconVisible}>
-          <Icon
-            iconPos={[-8, 8, -8.5]}
-            textPos={[-9.1, 6.0, -8.5]}
-            text="About Me"
-            link={"/my-portfolio/about"}
-            url={process.env.PUBLIC_URL + "/assets/images/about-me.png"}
-          />
-          <Icon
-            iconPos={[-4, 8, -8.5]}
-            textPos={[-5.1, 6.0, -8.5]}
-            text="Experience"
-            link={"/my-portfolio/experience"}
-            url={process.env.PUBLIC_URL + "/assets/images/office-icon.jpg"}
-          />
-
-          <Icon
-            iconPos={[0, 8, -8.5]}
-            textPos={[-1.1, 6.0, -8.5]}
-            text="Projects"
-            link={"/my-portfolio/projects"}
-            url={process.env.PUBLIC_URL + "/assets/images/projects-icons.jpg"}
-          />
-          <Icon
-            iconPos={[4, 8, -8.5]}
-            textPos={[3.1, 6.0, -8.5]}
-            text="Contact"
-            link={"/my-portfolio/contacts"}
-            url={process.env.PUBLIC_URL + "/assets/images/email.jpg"}
-          />
-        </group>
         <LaptopModel />
       </group>
     </>

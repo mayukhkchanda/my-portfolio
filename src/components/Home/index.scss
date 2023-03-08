@@ -40,6 +40,49 @@
       margin: 0.5rem;
     }
   }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    .icon {
+      cursor: pointer;
+      margin: 15px 10px 10px;
+      padding-right: 25px;
+      width: fit-content;
+      &.ml-0 {
+        margin-left: 0;
+      }
+      .icon-img {
+        width: 65px;
+        object-fit: contain;
+        margin-top: 3px;
+        min-height: 50px;
+        &.xs {
+          width: 50px;
+          margin-top: 10px;
+        }
+      }
+      .icon-text {
+        color: #000;
+        transition: color 350ms ease;
+        font-size: 14px;
+        &.pt-4 {
+          padding-top: 4px;
+        }
+        &:hover {
+          color: #efefef;
+          transition: color 350ms ease;
+        }
+      }
+      &:hover {
+        .icon-text {
+          color: #efefef;
+        }
+      }
+    }
+  }
 }
 .home.hidden {
   opacity: 0;
@@ -58,6 +101,13 @@
 
       p {
         font-size: 1.5rem;
+      }
+    }
+    .icons {
+      .icon {
+        .icon-text {
+          font-size: 12px;
+        }
       }
     }
   }

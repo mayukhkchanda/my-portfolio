@@ -4,7 +4,7 @@ import { MenuItem } from "./MenuItem";
 
 const variants = {
   open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.6 },
+    transition: { staggerChildren: 0.07, delayChildren: 0.6, delay: 0.55 },
     display: "flex",
   },
   closed: {
