@@ -7,6 +7,7 @@ import PdfIcon from "@mui/icons-material/PictureAsPdf";
 import Card from "components/CardComponent";
 
 import "./style.scss";
+import ControlButton from "components/ControlButton";
 const Index = () => {
   return (
     <Card className="contacts">
@@ -72,6 +73,10 @@ const Index = () => {
             </a>
           </div>
         </div>
+      </div>
+      <div className="page-control-container">
+        <ControlButton href="/my-portfolio/projects" title="Projects" direction="prev" key="projects" />
+        <ControlButton href="/my-portfolio" title="Home" direction="next" key="home" />
       </div>
     </Card>
   );

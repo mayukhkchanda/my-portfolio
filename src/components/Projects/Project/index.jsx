@@ -75,7 +75,7 @@ const Index = (props) => {
       <motion.div
         className="project-item"
         initial={false}
-        animate={isHover || isMobile ? "show" : "hide"}
+        animate={isHover ? "show" : "hide"}
         onHoverStart={toggleHover}
         onHoverEnd={toggleHover}
       >

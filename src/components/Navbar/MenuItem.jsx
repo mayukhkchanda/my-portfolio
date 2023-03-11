@@ -31,9 +31,9 @@ export const MenuItem = ({ link, text, toggle }) => {
   };
 
   return (
-    <motion.div variants={variants} className="link-div" onClick={navigateTo}>
+    <motion.button variants={variants} className="link-div" onClick={navigateTo}>
       <p className="nav-link">{text}</p>
-    </motion.div>
+    </motion.button>
   );
 };
 

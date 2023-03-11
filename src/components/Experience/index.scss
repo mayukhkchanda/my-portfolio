@@ -17,6 +17,17 @@
     background-color: #ffd207;
     bottom: 6px;
   }
+  .page-control-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding: 0px 24px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -29,6 +40,9 @@
     .main-title::after {
       width: 69%;
       height: 4px;
+    }
+    .page-control-container {
+      display: none;
     }
   }
 }

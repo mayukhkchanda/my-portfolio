@@ -3,13 +3,18 @@ import { getText } from "utils/commonUtils";
 import Card from "components/CardComponent";
 import Project from "./Project";
 import "./style.scss";
+import ControlButton from "components/ControlButton";
 
 const porjectDetails = getText("projectDetails");
 
 const Index = () => {
   return (
     <Card className="projects">
-      <h2 className="heading">{porjectDetails.heading}</h2>
+      <div className="page-control-container">
+        <ControlButton href="/my-portfolio/experience" title="Experience" direction="prev" key="experience" />
+        <h2 className="heading">{porjectDetails.heading}</h2>
+        <ControlButton href="/my-portfolio/contacts" title="Contacts" direction="next" key="contact-me" />
+      </div>
       <div className="desc-container">
         <p className="desc">
           {porjectDetails.descTxt1} {porjectDetails.descTxt2}

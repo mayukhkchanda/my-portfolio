@@ -2,6 +2,8 @@ import React from "react";
 import Card from "components/CardComponent";
 import Link from "components/Link";
 import { getText } from "utils/commonUtils";
+import ControlButton from "components/ControlButton";
+
 import "./index.scss";
 
 const about = getText("about");
@@ -47,6 +49,10 @@ const About = () => {
             );
           })}
         </div>
+      </div>
+      <div className="page-control-container">
+        <ControlButton href="/my-portfolio" title="Home" direction="prev" key="home" />
+        <ControlButton href="/my-portfolio/experience" title="Experience" direction="next" key="Experience" />
       </div>
     </Card>
   );
