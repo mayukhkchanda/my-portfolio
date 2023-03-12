@@ -10,7 +10,7 @@ import { useThree } from "@react-three/fiber";
 
 const getTransformations = (pathname, animationDelay) => {
   let scenePos, sceneRot, camPos;
-  if (pathname === "/my-portfolio" || pathname === "/my-portfolio/") {
+  if (["/my-portfolio", "/my-portfolio/", "/"].includes(pathname)) {
     scenePos = { x: 3.0, y: -8, z: 0, duration: 1, delay: animationDelay };
     sceneRot = {
       x: angleToRadian(0),
@@ -20,7 +20,7 @@ const getTransformations = (pathname, animationDelay) => {
       delay: animationDelay,
     };
     camPos = { x: 0, y: 0, z: 27, duration: 1, delay: animationDelay };
-  } else if (pathname === "/my-portfolio/about") {
+  } else if (pathname === "/about") {
     scenePos = { x: 0, y: -13, z: 0, duration: 1, delay: animationDelay };
     sceneRot = {
       x: 0,
@@ -30,7 +30,7 @@ const getTransformations = (pathname, animationDelay) => {
       delay: animationDelay,
     };
     camPos = { x: 0, y: 0, z: 10, duration: 1, delay: animationDelay };
-  } else if (pathname === "/my-portfolio/experience") {
+  } else if (pathname === "/experience") {
     scenePos = { x: -18, y: -15, z: 0, duration: 1, delay: animationDelay };
     sceneRot = {
       x: 0,
@@ -40,7 +40,7 @@ const getTransformations = (pathname, animationDelay) => {
       delay: animationDelay,
     };
     camPos = { x: 0, y: 0, z: 23, duration: 1, delay: animationDelay };
-  } else if (pathname === "/my-portfolio/projects") {
+  } else if (pathname === "/projects") {
     scenePos = { x: 0, y: -4, z: 0, duration: 1, delay: animationDelay };
     sceneRot = {
       x: angleToRadian(90),
@@ -50,7 +50,7 @@ const getTransformations = (pathname, animationDelay) => {
       delay: animationDelay,
     };
     camPos = { x: 0, y: 0, z: 17, duration: 1, delay: animationDelay };
-  } else if (pathname === "/my-portfolio/contacts") {
+  } else if (pathname === "/contacts") {
     scenePos = { x: -24.5, y: -3, z: 22, duration: 1, delay: animationDelay };
     sceneRot = {
       x: angleToRadian(90),
@@ -94,9 +94,7 @@ const Model = () => {
     }, 800);
 
   }, [location?.pathname]);
-  const isIconVisible =
-    location?.pathname === "/my-portfolio" ||
-    location?.pathname === "/my-portfolio/";
+  const isIconVisible = ["/my-portfolio", "/my-portfolio/", "/"].includes(location?.pathname)
 
   return (
     <>

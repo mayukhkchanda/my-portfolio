@@ -27,7 +27,7 @@ const pathVariants = [
 ];
 
 export const MenuToggle = ({ toggle }) => (
-  <button onClick={toggle}>
+  <div>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={pathVariants[0]}
@@ -43,5 +43,5 @@ export const MenuToggle = ({ toggle }) => (
         transition={{ duration: 0.5, type: "tween" }}
       />
     </svg>
-  </button>
+  </div>
 );

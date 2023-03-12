@@ -26,10 +26,8 @@ const socialLinks = [
 
 const Social = () => {
   const location = useLocation();
-
-  const showLinks =
-    location.pathname === "/my-portfolio" ||
-    location.pathname === "/my-portfolio/";
+  console.log(location.pathname)
+  const showLinks = ["/my-portfolio", "/my-portfolio/", "/"].includes(location?.pathname);
 
   if (!showLinks) return;
 

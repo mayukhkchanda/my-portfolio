@@ -55,9 +55,9 @@ const Navbar = () => {
       animate={isOpen ? "open" : "closed"}
       variants={navbarVariant}
     >
-      <motion.div className="menu">
-        <MenuToggle toggle={() => toggleOpen()} />
-      </motion.div>
+      <motion.button onClick={toggleOpen} className="menu">
+        <MenuToggle />
+      </motion.button>
 
       <Navigation toggle={() => toggleOpen()} />
       <motion.div className="nav-bg" variants={navbarBgVariant}></motion.div>

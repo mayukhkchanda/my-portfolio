@@ -31,7 +31,7 @@ const About = () => {
         ))}
         <p className="content-text">
           I love to build things for the web. Take a look at some of the things
-          I've built <Link href="/my-portfolio/projects" title="here" />.
+          I've built <Link href="/projects" title="here" />.
         </p>
         <p className="content-text">
           Here are few of the technologies I've been working on recently.
@@ -51,8 +51,8 @@ const About = () => {
         </div>
       </div>
       <div className="page-control-container">
-        <ControlButton href="/my-portfolio" title="Home" direction="prev" key="home" />
-        <ControlButton href="/my-portfolio/experience" title="Experience" direction="next" key="Experience" />
+        <ControlButton href="/" title="Home" direction="prev" key="home" />
+        <ControlButton href="/experience" title="Experience" direction="next" key="Experience" />
       </div>
     </Card>
   );

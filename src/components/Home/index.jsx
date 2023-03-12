@@ -5,14 +5,14 @@ import "./index.scss";
 const iconsList = [
   {
     text: "About Me",
-    link: "/my-portfolio/about",
+    link: "/about",
     url: "/assets/images/about-me.png",
     imgClass: "",
     textClass: ""
   },
   {
     text: "Experience",
-    link: "/my-portfolio/experience",
+    link: "/experience",
     url: "/assets/images/office-icon.jpg",
     imgClass: "xs",
     textClass: "pt-4"
@@ -20,7 +20,7 @@ const iconsList = [
   },
   {
     text: "Projects",
-    link: "/my-portfolio/projects",
+    link: "/projects",
     url: "/assets/images/projects-icons.jpg",
     imgClass: "xs",
     textClass: "pt-4"
@@ -28,7 +28,7 @@ const iconsList = [
   },
   {
     text: "Contact",
-    link: "/my-portfolio/contacts",
+    link: "/contacts",
     url: "/assets/images/email.jpg",
     imgClass: "xs",
     textClass: "pt-4"

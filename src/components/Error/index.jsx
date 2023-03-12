@@ -12,7 +12,7 @@ const Error = () => {
           In Space!! <span className="rocket">🚀</span>
         </h1>
       </div>
-      <Link href="/my-portfolio" title="Take Me Home"></Link>
+      <Link href="/" title="Take Me Home"></Link>
     </div>
   );
 };

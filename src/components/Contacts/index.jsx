@@ -75,8 +75,8 @@ const Index = () => {
         </div>
       </div>
       <div className="page-control-container">
-        <ControlButton href="/my-portfolio/projects" title="Projects" direction="prev" key="projects" />
-        <ControlButton href="/my-portfolio" title="Home" direction="next" key="home" />
+        <ControlButton href="/projects" title="Projects" direction="prev" key="projects" />
+        <ControlButton href="/" title="Home" direction="next" key="home" />
       </div>
     </Card>
   );

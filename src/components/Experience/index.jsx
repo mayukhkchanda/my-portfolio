@@ -13,8 +13,8 @@ const Experience = () => {
       <h2 className="main-title">{experience?.heading}</h2>
       <Tab tabPanelData={experience?.companies} />
       <div className="page-control-container">
-        <ControlButton href="/my-portfolio/about" title="About Me" direction="prev" key="about-me" />
-        <ControlButton href="/my-portfolio/projects" title="Projects" direction="next" key="projects" />
+        <ControlButton href="/about" title="About Me" direction="prev" key="about-me" />
+        <ControlButton href="/projects" title="Projects" direction="next" key="projects" />
       </div>
     </Card>
   );

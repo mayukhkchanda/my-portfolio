@@ -1,6 +1,6 @@
 import React from "react";
 import Canvas from "components/Globe/Canvas";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Error from "components/Error";
 import Navbar from "components/Navbar";
 import Social from "components/Social";
@@ -18,15 +18,15 @@ const App = () => {
         <Social />
         <div className="content">
           <Routes>
-            <Route exact path="/my-portfolio" element={<></>} />
-            <Route exact path="/my-portfolio/about" element={<About />} />
+            <Route exact path="/" element={<></>} />
+            <Route exact path="/about" element={<About />} />
             <Route
               exact
-              path="/my-portfolio/experience"
+              path="/experience"
               element={<Experience />}
             />
-            <Route exact path="/my-portfolio/projects" element={<Projects />} />
-            <Route exact path="/my-portfolio/contacts" element={<Contacts />} />
+            <Route exact path="/projects" element={<Projects />} />
+            <Route exact path="/contacts" element={<Contacts />} />
             <Route exact path="*" element={<Error />} />
           </Routes>
         </div>

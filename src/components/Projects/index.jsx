@@ -11,9 +11,9 @@ const Index = () => {
   return (
     <Card className="projects">
       <div className="page-control-container">
-        <ControlButton href="/my-portfolio/experience" title="Experience" direction="prev" key="experience" />
+        <ControlButton href="/experience" title="Experience" direction="prev" key="experience" />
         <h2 className="heading">{porjectDetails.heading}</h2>
-        <ControlButton href="/my-portfolio/contacts" title="Contacts" direction="next" key="contact-me" />
+        <ControlButton href="/contacts" title="Contacts" direction="next" key="contact-me" />
       </div>
       <div className="desc-container">
         <p className="desc">
